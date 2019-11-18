@@ -267,7 +267,7 @@ namespace Crypton.TerraformStateService
                         cmd.Transaction = trx;
                         cmd.CommandText = "UPDATE states SET data = @data WHERE name = @name";
                         cmd.Parameters.AddWithValue("@name", name);
-                        cmd.Parameters.AddWithValue("@state", state);
+                        cmd.Parameters.AddWithValue("@data", state);
                         affected = cmd.ExecuteNonQuery();
                     }
 
