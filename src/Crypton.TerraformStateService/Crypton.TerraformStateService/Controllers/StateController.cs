@@ -43,7 +43,7 @@ namespace Crypton.TerraformStateService.Controllers
         [Route("{name}")]
         public async Task<IActionResult> Update([Required, StateNameValidator] string name, string ID = null) // ID = lock ID
         {
-            if (Request.Body.Length == 0)
+            if (Request.ContentLength == 0 || Request.ContentLength == null)
                 return BadRequest();
 
             string state;
